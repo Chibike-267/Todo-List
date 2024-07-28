@@ -1,0 +1,10 @@
+<div>
+    <input type="text" class="new-todo-name" [(ngModel)]="newTodoName" placeholder="Enter New ToDo">
+    <button class="add-todo" (click)="addTodo()">Add ToDo</button>
+  </div>
+
+  <div *ngFor="let todo of todos$ | async" class="todo-item">
+    <h3 class="todo-name">{{ todo.name }}</h3>
+    <button class="delete-todo" (click)="removeTodo(todo.id)">Delete</button>
+  </div>
+  
